@@ -13,7 +13,7 @@ include_directories("/usr/local/include" ${CMAKE_SOURCE_DIR}/include)
 link_directories(${CMAKE_SOURCE_DIR}/lib "/usr/local/lib64")
 
 #COMPLETER ICI AU FUR ET A MESURE	\/
-add_executable(ProjectTeam3 src/main.cpp  )
+add_executable(ProjectTeam3 src/main.cpp src/allele.cpp)
 
 if (test)
   enable_testing()
@@ -24,7 +24,7 @@ if (test)
   endif(NOT GTEST_FOUND)
   include_directories(${GTEST_INCLUDE_DIRS})
 #COMPLETER AUSSI ICI			    \/
-  add_executable(testProject src/main.cpp)
+  add_executable(testProject src/main.cpp src/allele.cpp)
   target_link_libraries(testProject ${GTEST_BOTH_LIBRARIES} pthread)
   add_test(Project_Team_3 testProject)
 endif(test)
